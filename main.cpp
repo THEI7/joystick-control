@@ -14,15 +14,33 @@ int main(int argc, char* argv[]) {
 
         // 示例：打印A键状态（按下时输出提示）
         if (buttonA == 1) {
-            std::cout << "\033[32m[info]:\033[0m A键被按下"  << std::endl;
+            std::cout << "\r";
+            std::cout << "\033[32m[info]:A键被按下\033[0m"  << std::flush; // 绿色
         }
 
-        // 正确获取A键状态（使用Button枚举值作为参数）
+        // 正确获取B键状态（使用Button枚举值作为参数）
         uint8_t buttonB = lang8.getButtonState(joystickLib::controller<int>::Button::B);
 
-        // 示例：打印A键状态（按下时输出提示）
+        // 示例：打印B键状态（按下时输出提示）
         if (buttonB == 1) {
-            std::cout << "\033[32m[info]:\033[0m B键被按下"  << std::endl;
+            std::cout << "\r";
+            std::cout << "\033[34m[info]:B键被按下\033[0m"  << std::flush; // 蓝色
+        }
+
+        // 正确获取Y键状态（使用Button枚举值作为参数）
+        uint8_t buttonY = lang8.getButtonState(joystickLib::controller<int>::Button::Y);
+        // 示例：打印Y键状态（按下时输出提示）
+        if (buttonY == 1) {
+            std::cout << "\r";
+            std::cout << "\033[33m[info]:Y键被按下\033[0m"  << std::flush; // 黄色
+        }
+
+        // 正确获取X键状态（使用Button枚举值作为参数）
+        uint8_t buttonX = lang8.getButtonState(joystickLib::controller<int>::Button::X);
+        // 示例：打印X键状态（按下时输出提示）
+        if (buttonX == 1) {
+            std::cout << "\r";
+            std::cout << "\033[35m[info]:X键被按下\033[0m"  << std::flush; // 紫色
         }
 
         usleep(5000);  // 5ms延迟，降低CPU占用
